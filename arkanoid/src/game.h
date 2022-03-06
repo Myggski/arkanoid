@@ -1,23 +1,30 @@
 #pragma once
 
-#include <SDL.h>
-#include <stdio.h>
+#include "delta_time.h"
+#include "game_event_handler.h"
+#include "level.h"
+#include "renderer.h"
+#include "SDL.h"
 
 class Game {
 public:
-	Game();
-	~Game();
+	Game() = default;
+	~Game() = default;
 
-	void init(const char* title, int xpos, int ypos, int with, int height, bool fullscreen);
-	void handleEvents();
-	void update();
-	void draw();
-	void clean();
-
-	bool running() { return isRunning; }
+	void init(const char* title, int x_pos, int y_pos, int with, int height, bool fullscreen);
 
 private:
 	bool isRunning = false;
-	SDL_Window* window;
-	SDL_Renderer* render;
+	Level* level = nullptr;
+	SDL_Window* window = nullptr;
+	Renderer* render = nullptr;
+	DeltaTime* delta_time = nullptr;
+	GameEventHandler* event_handler = nullptr;
+	void update() const;
+	void clean();
+	void setup();
+	EventCallback exit_application = [this](SDL_Event)
+	{
+		isRunning = false;
+	};
 };

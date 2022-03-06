@@ -1,64 +1,66 @@
 #include "game.h"
 #include "input.h"
+#include "delta_time.h"
 
-Game::Game() {
-
-}
-
-Game::~Game() {
-
-}
-
-void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen) {
+void Game::init(const char* title, int x_pos, int y_pos, int width, int height, bool fullscreen)
+{
 	int flags = 0;
 
 	if (fullscreen) {
 		flags = SDL_WINDOW_FULLSCREEN;
 	}
 
-	bool initialization = SDL_Init(SDL_INIT_EVERYTHING);
-	bool initialized = initialization == 0;
+	const bool initialization = SDL_Init(SDL_INIT_EVERYTHING);
+	const bool initialized = initialization == 0;
 
 	if (initialized) {
-		window = SDL_CreateWindow(title, xpos, ypos, width, height, flags);
-		render = SDL_CreateRenderer(window, -1, 0);
-
-		SDL_SetRenderDrawColor(render, 25, 25, 40, 255);
+		window = SDL_CreateWindow(title, x_pos, y_pos, width, height, flags);
+		setup();
 	}
 
 	isRunning = initialized;
+
+	while (isRunning) {
+		event_handler->pull_events();
+		update();
+		render->draw();
+	}
+
+	clean();
 }
 
-void Game::handleEvents() {
-	SDL_Event event;
-	while (SDL_PollEvent(&event)) {
-		switch (event.type) {
-		case SDL_QUIT:
-			isRunning = false;
-			break;
+void Game::setup()
+{
+	level = new Level();
+	render = new Renderer(window, level);
 
-		case SDL_KEYDOWN:
-			Input::set_key_press(event.key.keysym.scancode, SDL_KEYDOWN);
-			break;
+	event_handler = new GameEventHandler();
+	event_handler->add_listener(SDL_QUIT, &exit_application);
 
-		case SDL_KEYUP:
-			Input::set_key_press(event.key.keysym.scancode, SDL_KEYUP);
-			break;
-		}
+	Input::init(event_handler);
+}
+
+
+void Game::update() const
+{
+	DeltaTime::refresh_dt();
+	auto& game_objects = level->get_objects();
+
+	for (const auto game_object : game_objects)
+	{
+		game_object->update(&DeltaTime::dt);
 	}
 }
 
-void Game::update() {
-
-}
-
-void Game::draw() {
-	SDL_RenderClear(render);
-	SDL_RenderPresent(render);
-}
-
-void Game::clean() {
+void Game::clean()
+{
 	SDL_DestroyWindow(window);
-	SDL_DestroyRenderer(render);
+	
+	delete render;
+
+	Input::clean(event_handler);
+
+	event_handler->remove_listener(SDL_QUIT, &exit_application);
+	delete event_handler;
 	SDL_Quit();
 }

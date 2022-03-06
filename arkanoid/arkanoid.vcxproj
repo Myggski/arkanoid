@@ -21,16 +21,28 @@
   <ItemGroup>
     <ClCompile Include="src\ball.cpp" />
     <ClCompile Include="src\circle_object.cpp" />
+    <ClCompile Include="src\delta_time.cpp" />
+    <ClCompile Include="src\game_event_handler.cpp" />
     <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\input.cpp" />
+    <ClCompile Include="src\level.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\player.cpp" />
+    <ClCompile Include="src\rectangle_object.cpp" />
+    <ClCompile Include="src\renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ball.h" />
     <ClInclude Include="src\circle_object.h" />
+    <ClInclude Include="src\delta_time.h" />
+    <ClInclude Include="src\game_event_handler.h" />
     <ClInclude Include="src\game.h" />
     <ClInclude Include="src\input.h" />
-    <ClInclude Include="src\object.h" />
+    <ClInclude Include="src\game_object.h" />
+    <ClInclude Include="src\level.h" />
+    <ClInclude Include="src\player.h" />
+    <ClInclude Include="src\rectangle_object.h" />
+    <ClInclude Include="src\renderer.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -133,12 +145,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Projects\Game Programming in C++\arkanoid\arkanoid\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\FutureGames\Projects\Programming with C++\arkanoid\arkanoid\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Projects\Game Programming in C++\arkanoid\arkanoid\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\FutureGames\Projects\Programming with C++\arkanoid\arkanoid\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

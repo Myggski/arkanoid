@@ -1,12 +1,15 @@
 #pragma once
 
-#include <cstdint>
-#include "object.h"
+#include <SDL_render.h>
+#include "game_object.h"
 
-class CircleObject : Object {
+class CircleObject : public GameObject {
 public:
-	void draw();
-	CircleObject(float radius, SDL_Color color);
+	CircleObject(const SDL_Color color, float radius);
+	void draw(SDL_Renderer* render) const override;
+	virtual void update(const float* dt) override = 0;
 private:
 	float radius;
+	float x{ 100.f };
+	float y{ 100.f };
 };
