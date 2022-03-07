@@ -21,9 +21,11 @@
   <ItemGroup>
     <ClCompile Include="src\ball.cpp" />
     <ClCompile Include="src\circle_object.cpp" />
+    <ClCompile Include="src\collision.cpp" />
     <ClCompile Include="src\delta_time.cpp" />
     <ClCompile Include="src\game_event_handler.cpp" />
     <ClCompile Include="src\game.cpp" />
+    <ClCompile Include="src\game_settings.cpp" />
     <ClCompile Include="src\input.cpp" />
     <ClCompile Include="src\level.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -34,9 +36,11 @@
   <ItemGroup>
     <ClInclude Include="src\ball.h" />
     <ClInclude Include="src\circle_object.h" />
+    <ClInclude Include="src\collision.h" />
     <ClInclude Include="src\delta_time.h" />
     <ClInclude Include="src\game_event_handler.h" />
     <ClInclude Include="src\game.h" />
+    <ClInclude Include="src\game_settings.h" />
     <ClInclude Include="src\input.h" />
     <ClInclude Include="src\game_object.h" />
     <ClInclude Include="src\level.h" />
@@ -145,13 +149,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\FutureGames\Projects\Programming with C++\arkanoid\arkanoid\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)$(ProjectName)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\FutureGames\Projects\Programming with C++\arkanoid\arkanoid\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(ProjectName)\lib;%(AdditionalIncludeDirectories);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <PerUserRedirection>true</PerUserRedirection>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

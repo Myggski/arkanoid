@@ -1,19 +1,24 @@
-d:\futuregames\projects\programming with c++\arkanoid\arkanoid\x64\debug\vc143.pdb
-d:\futuregames\projects\programming with c++\arkanoid\arkanoid\x64\debug\vc143.idb
-d:\futuregames\projects\programming with c++\arkanoid\arkanoid\x64\debug\main.obj
-d:\futuregames\projects\programming with c++\arkanoid\arkanoid\x64\debug\input.obj
-d:\futuregames\projects\programming with c++\arkanoid\arkanoid\x64\debug\game.obj
-d:\futuregames\projects\programming with c++\arkanoid\arkanoid\x64\debug\circle_object.obj
-d:\futuregames\projects\programming with c++\arkanoid\arkanoid\x64\debug\ball.obj
-d:\futuregames\projects\programming with c++\arkanoid\arkanoid\x64\debug\delta_time.obj
-d:\futuregames\projects\programming with c++\arkanoid\arkanoid\x64\debug\renderer.obj
-d:\futuregames\projects\programming with c++\arkanoid\arkanoid\x64\debug\game_event_handler.obj
-d:\futuregames\projects\programming with c++\arkanoid\arkanoid\x64\debug\arkanoid.ilk
-d:\futuregames\projects\programming with c++\arkanoid\x64\debug\arkanoid.exe
-d:\futuregames\projects\programming with c++\arkanoid\x64\debug\arkanoid.pdb
-d:\futuregames\projects\programming with c++\arkanoid\arkanoid\x64\debug\arkanoid.tlog\cl.command.1.tlog
-d:\futuregames\projects\programming with c++\arkanoid\arkanoid\x64\debug\arkanoid.tlog\cl.read.1.tlog
-d:\futuregames\projects\programming with c++\arkanoid\arkanoid\x64\debug\arkanoid.tlog\cl.write.1.tlog
-d:\futuregames\projects\programming with c++\arkanoid\arkanoid\x64\debug\arkanoid.tlog\link.command.1.tlog
-d:\futuregames\projects\programming with c++\arkanoid\arkanoid\x64\debug\arkanoid.tlog\link.read.1.tlog
-d:\futuregames\projects\programming with c++\arkanoid\arkanoid\x64\debug\arkanoid.tlog\link.write.1.tlog
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\vc143.pdb
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\vc143.idb
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\rectangle_object.obj
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\input.obj
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\game_event_handler.obj
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\delta_time.obj
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\circle_object.obj
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\ball.obj
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\renderer.obj
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\player.obj
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\main.obj
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\level.obj
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\game.obj
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\game_settings.obj
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\collision.obj
+c:\projects\game programming in c++\arkanoid\x64\debug\arkanoid.exe
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\arkanoid.ilk
+c:\projects\game programming in c++\arkanoid\x64\debug\arkanoid.pdb
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\arkanoid.tlog\cl.command.1.tlog
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\arkanoid.tlog\cl.read.1.tlog
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\arkanoid.tlog\cl.write.1.tlog
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\arkanoid.tlog\link.command.1.tlog
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\arkanoid.tlog\link.read.1.tlog
+c:\projects\game programming in c++\arkanoid\arkanoid\x64\debug\arkanoid.tlog\link.write.1.tlog

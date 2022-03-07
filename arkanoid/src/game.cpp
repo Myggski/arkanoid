@@ -31,6 +31,8 @@ void Game::init(const char* title, int x_pos, int y_pos, int width, int height, 
 
 void Game::setup()
 {
+	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "2");
+
 	level = new Level();
 	render = new Renderer(window, level);
 
@@ -44,8 +46,8 @@ void Game::setup()
 void Game::update() const
 {
 	DeltaTime::refresh_dt();
-	auto& game_objects = level->get_objects();
 
+	auto& game_objects = level->get_objects();
 	for (const auto game_object : game_objects)
 	{
 		game_object->update(&DeltaTime::dt);
@@ -54,13 +56,14 @@ void Game::update() const
 
 void Game::clean()
 {
-	SDL_DestroyWindow(window);
-	
+	delete level;
 	delete render;
 
 	Input::clean(event_handler);
-
 	event_handler->remove_listener(SDL_QUIT, &exit_application);
+
 	delete event_handler;
+
+	SDL_DestroyWindow(window);
 	SDL_Quit();
 }

@@ -1,15 +1,17 @@
 #pragma once
 
 #include "level.h"
-#include "ball.h"
-#include "player.h"
+#include "game_object.h"
 
 Level::Level()
 {
-	Player* player = new Player({ 120, 25, 45, 255 }, { 400-40, 500-25, 80, 25 });
-	Ball* ball = new Ball({255, 255, 255, 255}, 8.f);
+	balls = std::vector<Ball*>(1, { new Ball(this) });
+
+	player = new Player(this);
+	player->add_ball_to_hold(balls[0]);
+	
 	game_objects.push_back(player);
-	game_objects.push_back(ball);
+	game_objects.push_back(balls[0]);
 }
 
 const std::vector<GameObject*>& Level::get_objects() const

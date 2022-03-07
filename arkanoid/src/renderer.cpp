@@ -4,7 +4,6 @@ Renderer::Renderer(SDL_Window* window, Level* level) : level(level), game_render
 
 Renderer::~Renderer()
 {
-	delete level;
 	SDL_DestroyRenderer(game_render);
 }
 
