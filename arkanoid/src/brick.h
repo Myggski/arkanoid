@@ -9,15 +9,13 @@ static constexpr SDL_Color BRICK_COLOR_1 = { 156, 64, 64, 255 };
 static constexpr SDL_Color BRICK_COLOR_2 = { 64, 156, 64, 255 };
 static constexpr SDL_Color BRICK_COLOR_3 = { 64, 64, 156, 255 };
 
-class Level;
 class Brick : public RectangleObject
 {
 public:
-	Brick(const float x, const float y, const uint8_t life, Level* level) :
+	Brick(const float x, const float y, const uint8_t life) :
 	RectangleObject(
 		get_color(), 
-		{ x, y, BRICK_WIDTH, BRICK_HEIGHT }, 
-		level
+		{ x, y, BRICK_WIDTH, BRICK_HEIGHT }
 	),
 	life(life > BRICK_MAX_LIFE ? BRICK_MAX_LIFE : life)
 	{
@@ -37,7 +35,7 @@ public:
 			return BRICK_COLOR_1;
 		}
 	}
-	void update(const float* dt) override;
+	void update() override {};
 	void hit();
 
 private:

@@ -1,6 +1,6 @@
 #include "rectangle_object.h"
 
-RectangleObject::RectangleObject(const SDL_Color color, SDL_FRect rectangle, Level* level) : GameObject(color, level), rectangle(rectangle) {}
+RectangleObject::RectangleObject(const SDL_Color color, SDL_FRect rectangle) : GameObject(color), rectangle(rectangle) {}
 
 void RectangleObject::draw(SDL_Renderer* render) const
 {

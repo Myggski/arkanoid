@@ -5,15 +5,13 @@
 #include "queue"
 #include "ball.h"
 
-#define PLAYER_MOVEMENT 200.f
-
 class Player final : public RectangleObject
 {
 public:
-	Player(Level* level);
+	Player();
 	~Player();
 	void add_ball_to_hold(Ball* ball);;
-	void update(const float* dt) override;
+	void update() override;
 private:
 	bool moving_left{ false };
 	bool moving_right{ false };

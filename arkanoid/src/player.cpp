@@ -8,8 +8,9 @@ static const float PLAYER_HEIGHT = 25.f;
 static const float START_Y_OFFSET_POSITION = 50.f;
 static const float PLAYER_START_X = (WINDOW_WIDTH / 2) - (PLAYER_WIDTH / 2);
 static const float PLAYER_START_Y = (WINDOW_HEIGHT - START_Y_OFFSET_POSITION) - (PLAYER_HEIGHT / 2);
+static const float PLAYER_MOVEMENT = 500.f;
 
-Player::Player(Level* level) : RectangleObject(PLAYER_COLOR, { PLAYER_START_X, PLAYER_START_Y, PLAYER_WIDTH, PLAYER_HEIGHT }, level)
+Player::Player() : RectangleObject(PLAYER_COLOR, { PLAYER_START_X, PLAYER_START_Y, PLAYER_WIDTH, PLAYER_HEIGHT })
 {
 	Input::add_listener(SDL_SCANCODE_A, &try_move_left);
 	Input::add_listener(SDL_SCANCODE_D, &try_move_right);
@@ -23,18 +24,18 @@ Player::~Player()
 	Input::remove_listener(SDL_SCANCODE_SPACE, &try_activate_ball);
 }
 
-void Player::update(const float* dt)
+void Player::update()
 {
 	float next_position{ 0 };
 
 	if (moving_left)
 	{
-		next_position = rectangle.x + (-PLAYER_MOVEMENT * (*dt));
+		next_position = rectangle.x + (-PLAYER_MOVEMENT * DeltaTime::delta_time);
 	}
 
 	if (moving_right)
 	{
-		next_position = rectangle.x + (PLAYER_MOVEMENT * (*dt));
+		next_position = rectangle.x + (PLAYER_MOVEMENT * DeltaTime::delta_time);
 	}
 
 	if (next_position && next_position > 0 && (next_position + PLAYER_WIDTH) < WINDOW_WIDTH)

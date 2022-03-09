@@ -4,7 +4,7 @@ static constexpr float TAU = 6.283f;
 static constexpr float CIRCLE_RESOLUTION = 32;
 static constexpr float step = TAU / CIRCLE_RESOLUTION;
 
-CircleObject::CircleObject(SDL_Color color, const float radius, Level* level) : GameObject(color, level), radius(radius) {}
+CircleObject::CircleObject(SDL_Color color, const float radius) : GameObject(color), radius(radius) {}
 
 void CircleObject::draw(SDL_Renderer* render) const
 {

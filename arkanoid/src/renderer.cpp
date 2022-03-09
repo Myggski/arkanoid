@@ -1,8 +1,7 @@
 #include "renderer.h"
+#include "game_object.h"
 
-#include <iostream>
-
-Renderer::Renderer(SDL_Window* window, Level* level) : level(level), game_render(SDL_CreateRenderer(window, -1, 0)) {}
+Renderer::Renderer(SDL_Window* window) : game_render(SDL_CreateRenderer(window, -1, 0)) {}
 
 Renderer::~Renderer()
 {
@@ -11,11 +10,11 @@ Renderer::~Renderer()
 
 void Renderer::draw() const
 {
-	std::cout << level->get_objects().size() << "\n";
 	SDL_SetRenderDrawColor(game_render, 25, 25, 40, 255);
 	SDL_RenderClear(game_render);
 
-	for (const auto& game_object : level->get_objects())
+	auto& game_objects = Level::get_objects();
+	for (const auto& game_object : game_objects)
 	{
 		if (game_object)
 		{

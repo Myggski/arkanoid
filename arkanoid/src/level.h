@@ -1,21 +1,20 @@
 #pragma once
 
 #include <vector>
-#include "ball.h"
-#include "player.h"
 
-class Brick;
+class Ball;
+class Player;
 class GameObject;
 class Level
 {
 public:
-	Level();
-	const std::vector<GameObject*>& get_objects() const;
-	void create_level();
-	void remove_brick(Brick* brick);
+	static const std::vector<GameObject*>& get_objects();
+	static void init();
+	static std::vector<GameObject*> create_level();
+	static void remove_game_object(GameObject* game_object);
+	static bool is_ball_out_of_play(Ball* ball);
 private:
-	std::vector<Ball*> balls;
-	std::vector<Brick*> bricks;
-	Player* player;
-	std::vector<GameObject*> game_objects;
+	Level();
+	static Player* player;
+	static std::vector<GameObject*> game_objects;
 };

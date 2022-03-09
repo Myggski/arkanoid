@@ -5,7 +5,7 @@
 
 class CircleObject : public GameObject {
 public:
-	CircleObject(SDL_Color color, const float radius, Level* level);
+	CircleObject(SDL_Color color, const float radius);
 	void draw(SDL_Renderer* render) const override;
 	const float& get_radius() const {
 		return radius;
@@ -16,7 +16,7 @@ public:
 	const float& get_y() const {
 		return y;
 	};
-	virtual void update(const float* dt) override = 0;
+	virtual void update() override = 0;
 protected:
 	float radius;
 	float x{ 100.f };

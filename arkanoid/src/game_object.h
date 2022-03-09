@@ -7,9 +7,8 @@ class GameObject {
 public:
 	virtual ~GameObject() = default;
 	virtual void draw(SDL_Renderer* render) const = 0;
-	virtual void update(const float* dt) = 0;
+	virtual void update() = 0;
 protected:
-	GameObject(SDL_Color color, Level* level) : color(color), level(level) {}
+	GameObject(SDL_Color color) : color(color) {}
 	SDL_Color color { 255, 0, 0, 255};
-	Level* level;
 };

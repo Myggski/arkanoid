@@ -1,6 +1,5 @@
 #include "input.h"
 
-
 KeyEventMap Input::registered_events;
 
 EventCallback Input::invoke_key_press = [](SDL_Event event)

@@ -1,6 +1,7 @@
 #include "game.h"
-#include "input.h"
 #include "delta_time.h"
+#include "input.h"
+#include "game_object.h"
 
 void Game::init(const char* title, int x_pos, int y_pos, int width, int height, bool fullscreen)
 {
@@ -33,12 +34,12 @@ void Game::setup()
 {
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "2");
 
-	level = new Level();
-	render = new Renderer(window, level);
+	render = new Renderer(window);
 
 	event_handler = new GameEventHandler();
 	event_handler->add_listener(SDL_QUIT, &exit_application);
 
+	Level::init();
 	Input::init(event_handler);
 }
 
@@ -47,16 +48,15 @@ void Game::update() const
 {
 	DeltaTime::refresh_dt();
 
-	auto& game_objects = level->get_objects();
+	auto& game_objects = Level::get_objects();
 	for (const auto game_object : game_objects)
 	{
-		game_object->update(&DeltaTime::dt);
+		game_object->update();
 	}
 }
 
 void Game::clean()
 {
-	delete level;
 	delete render;
 
 	Input::clean(event_handler);

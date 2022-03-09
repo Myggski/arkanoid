@@ -1,13 +1,14 @@
 #pragma once
 
 #include "circle_object.h"
+#include "delta_time.h"
 #include "game_settings.h"
 
 static const float BALL_START_VELOCITY = cos(45) * 400.f;
 class Player;
 class Ball final : public CircleObject {
 public:
-	Ball(Level* level);
+	Ball();
 	inline void activate() {
 		is_activated = true;
 		
@@ -15,7 +16,7 @@ public:
 		velocity_y = -BALL_START_VELOCITY;
 	};
 	bool step(const float& dx, const float& dy);
-	void update(const float* dt) override;
+	void update() override;
 	void follow_player(const Player& player);
 	static Ball get_collision_check_ball(const Ball& ball, const float& dx, const float& dy);
 private:

@@ -4,9 +4,9 @@
 class RectangleObject : public GameObject
 {
 public:
-	RectangleObject(const SDL_Color color, SDL_FRect rectangle, Level* level);
+	RectangleObject(const SDL_Color color, SDL_FRect rectangle);
 	void draw(SDL_Renderer* render) const override;
-	virtual void update(const float* dt) override = 0;
+	virtual void update() override = 0;
 	const float& const min_x() const {
 		return rectangle.x;
 	};
