@@ -3,7 +3,7 @@
 #include "player.h"
 #include "level.h"
 #include "collision.h"
-#include <iostream>
+#include "brick.h"
 
 static const SDL_Color BALL_COLOR = { 255, 255, 255, 255 };
 static const float BALL_RADIUS = 8.f;
@@ -36,22 +36,29 @@ void Ball::follow_player(const Player& player) {
 
 bool Ball::step(const float& dx, const float& dy)
 {
-	Ball collision_ball_temp = Ball::get_collision_check_ball(*this, dx, dy);
+	const Collision::CircleCollider collision_ball_temp = Collision::CircleCollider(*this, dx, dy);
 
+	// Check wall
 	if ((collision_ball_temp.x - radius) < 0 || (collision_ball_temp.x + radius) >= WINDOW_WIDTH
 		|| (collision_ball_temp.y - radius) < 0 || (collision_ball_temp.y + radius) >= WINDOW_HEIGHT) {
 		return false;
 	}
 
-	auto game_objects = level->get_objects();
-	for (auto game_object : game_objects) {
+	auto& game_objects = level->get_objects();
+	for (const auto& game_object : game_objects) {
 		const Player* player = dynamic_cast<const Player*>(game_object);
 
-		if (player != nullptr) {
-			if (aabb_circle_intersect((*player), collision_ball_temp)) {
-				return false;
-			}
+		if (player && Collision::aabb_circle_intersect(Collision::RectangleCollider((*player)), collision_ball_temp)) {
+			return false;
 		}
+
+		Brick* brick = dynamic_cast<Brick*>(game_object);
+
+		if (brick && Collision::aabb_circle_intersect(Collision::RectangleCollider((*brick)), collision_ball_temp)) {
+			brick->hit();
+			return false;
+		}
+
 	}
 
 	x += dx;

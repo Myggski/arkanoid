@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ball.cpp" />
+    <ClCompile Include="src\brick.cpp" />
     <ClCompile Include="src\circle_object.cpp" />
     <ClCompile Include="src\collision.cpp" />
     <ClCompile Include="src\delta_time.cpp" />
@@ -35,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ball.h" />
+    <ClInclude Include="src\brick.h" />
     <ClInclude Include="src\circle_object.h" />
     <ClInclude Include="src\collision.h" />
     <ClInclude Include="src\delta_time.h" />
