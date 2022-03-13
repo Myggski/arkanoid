@@ -35,9 +35,11 @@ public:
 			return BRICK_COLOR_1;
 		}
 	}
-	void update() override {};
+	void update() override;
 	void hit();
 
 private:
 	uint8_t life{ 1 };
+	float destory_timer{ 0 };
+	const float destroy_delay{ 0.1f };
 };

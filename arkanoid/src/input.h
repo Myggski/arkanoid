@@ -17,4 +17,5 @@ public:
 private:
 	static KeyEventMap registered_events;
 	static EventCallback invoke_key_press;
+	static GameEventHandler* event_handler;
 };

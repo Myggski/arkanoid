@@ -1,8 +1,9 @@
 #pragma once
 
+#include <vcruntime_typeinfo.h>
+
 #include "SDL.h"
 
-class Level;
 class GameObject {
 public:
 	virtual ~GameObject() = default;

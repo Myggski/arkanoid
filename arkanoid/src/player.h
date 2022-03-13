@@ -4,13 +4,16 @@
 #include "input.h"
 #include "queue"
 #include "ball.h"
+#include "level.h"
 
 class Player final : public RectangleObject
 {
 public:
 	Player();
 	~Player();
-	void add_ball_to_hold(Ball* ball);;
+	void add_ball_to_hold(Ball* ball);
+	void add_listeners();
+	void remove_listeners();
 	void update() override;
 private:
 	bool moving_left{ false };
@@ -19,11 +22,11 @@ private:
 	std::queue<Ball*> balls_to_activate;
 	InputCallback try_move_left = [this](SDL_EventType event_type)
 	{
-		moving_left = event_type == SDL_KEYDOWN;
+		moving_left = !Level::is_game_over() && event_type == SDL_KEYDOWN;
 	};
 	InputCallback try_move_right = [this](SDL_EventType event_type)
 	{
-		moving_right = event_type == SDL_KEYDOWN;
+		moving_right = !Level::is_game_over() && event_type == SDL_KEYDOWN;
 	};
 	InputCallback try_activate_ball = [this](SDL_EventType event_type) {
 		if (event_type == SDL_KEYDOWN && !balls_to_activate.empty()) {

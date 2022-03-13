@@ -27,6 +27,16 @@ void Input::clean(GameEventHandler* event_handler)
 {
 	event_handler->remove_listener(SDL_KEYDOWN, &invoke_key_press);
 	event_handler->remove_listener(SDL_KEYUP, &invoke_key_press);
+
+	for (const auto& registered_event : registered_events)
+	{
+		for (auto* callback : registered_event.second)
+		{
+			remove_listener(registered_event.first, callback);
+		}
+	}
+
+	registered_events.clear();
 }
 
 void Input::add_listener(const SDL_Scancode& scancode, InputCallback* callback) {
@@ -47,4 +57,9 @@ void Input::remove_listener(const SDL_Scancode& scancode, InputCallback* callbac
 			return (*event_data).target<InputCallback>() == (*callback).target<InputCallback>();
 			}),
 		callbacks.end());
+
+	if (callbacks.empty())
+	{
+		registered_events.erase(registered_events.find(scancode));
+	}
 }

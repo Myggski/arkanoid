@@ -1,4 +1,5 @@
 #include "player.h"
+#include "delta_time.h"
 #include "input.h"
 #include "game_settings.h"
 
@@ -12,12 +13,27 @@ static const float PLAYER_MOVEMENT = 500.f;
 
 Player::Player() : RectangleObject(PLAYER_COLOR, { PLAYER_START_X, PLAYER_START_Y, PLAYER_WIDTH, PLAYER_HEIGHT })
 {
+	add_listeners();
+}
+
+Player::~Player()
+{
+	remove_listeners();
+
+	velocity_x = 0;
+	moving_left = false;
+	moving_right = false;
+	while (!balls_to_activate.empty()) balls_to_activate.pop();
+}
+
+void Player::add_listeners()
+{
 	Input::add_listener(SDL_SCANCODE_A, &try_move_left);
 	Input::add_listener(SDL_SCANCODE_D, &try_move_right);
 	Input::add_listener(SDL_SCANCODE_SPACE, &try_activate_ball);
 }
 
-Player::~Player()
+void Player::remove_listeners()
 {
 	Input::remove_listener(SDL_SCANCODE_A, &try_move_left);
 	Input::remove_listener(SDL_SCANCODE_D, &try_move_right);

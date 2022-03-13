@@ -1,11 +1,13 @@
 #include "renderer.h"
 #include "game_object.h"
+#include "level.h"
 
 Renderer::Renderer(SDL_Window* window) : game_render(SDL_CreateRenderer(window, -1, 0)) {}
 
 Renderer::~Renderer()
 {
 	SDL_DestroyRenderer(game_render);
+	game_render = nullptr;
 }
 
 void Renderer::draw() const
@@ -24,4 +26,3 @@ void Renderer::draw() const
 
 	SDL_RenderPresent(game_render);
 }
-

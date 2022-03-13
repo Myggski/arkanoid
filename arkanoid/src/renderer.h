@@ -1,6 +1,5 @@
 #pragma once
 #include <SDL_render.h>
-#include "level.h"
 
 class Renderer
 {
@@ -9,5 +8,5 @@ public:
 	~Renderer();
 	void draw() const;
 private:
-	SDL_Renderer* game_render = nullptr;
+	SDL_Renderer* game_render{ nullptr };
 };

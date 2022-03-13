@@ -9,8 +9,8 @@ using EventMap = std::unordered_map<SDL_EventType, std::vector<EventCallback*>>;
 class GameEventHandler final
 {
 public:
-	GameEventHandler() = default;
-	~GameEventHandler() = default;
+	GameEventHandler();
+	~GameEventHandler();
 	void pull_events() const;
 	void add_listener(const SDL_EventType& eventType, EventCallback* callback);
 	void remove_listener(const SDL_EventType& eventType, EventCallback* callback);

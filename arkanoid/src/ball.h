@@ -1,7 +1,6 @@
 #pragma once
 
 #include "circle_object.h"
-#include "delta_time.h"
 #include "game_settings.h"
 
 static const float BALL_START_VELOCITY = cos(45) * 400.f;
@@ -14,7 +13,7 @@ public:
 		
 		velocity_x = x <= (WINDOW_WIDTH / 2) ? -BALL_START_VELOCITY : BALL_START_VELOCITY;
 		velocity_y = -BALL_START_VELOCITY;
-	};
+	}
 	bool step(const float& dx, const float& dy);
 	void update() override;
 	void follow_player(const Player& player);

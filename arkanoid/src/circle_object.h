@@ -19,6 +19,6 @@ public:
 	virtual void update() override = 0;
 protected:
 	float radius;
-	float x{ 100.f };
-	float y{ 100.f };
+	float x{ -9999.f };
+	float y{ -9999.f };
 };
