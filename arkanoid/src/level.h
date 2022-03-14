@@ -1,6 +1,10 @@
 #pragma once
 
 #include <vector>
+#include <string>
+#include "game_settings.h"
+
+static constexpr float MAX_BALLS_TO_SPAWN = 5.f;
 
 class Ball;
 class Brick;
@@ -12,7 +16,9 @@ public:
 	static const std::vector<GameObject*>& get_objects();
 	static void init();
 	static void clean();
-	static std::vector<GameObject*> create_level();
+	static const std::vector<Brick*> create_level();
+	static const std::vector<Brick*> create_level_from_file(std::vector<std::string>& stringed_level);
+	static const std::vector<Brick*> create_default_level();
 	static bool is_ball_out_of_play(const Ball* ball);
 	static void remove_ball(Ball* ball);
 	static void add_ball();

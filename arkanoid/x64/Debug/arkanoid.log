@@ -1,16 +1,4 @@
-﻿  level.cpp
-D:\FutureGames\Projects\Programming with C++\arkanoid\arkanoid\src\ball.h(6,50): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\FutureGames\Projects\Programming with C++\arkanoid\arkanoid\src\ball.h(6,40): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
-D:\FutureGames\Projects\Programming with C++\arkanoid\arkanoid\src\rectangle_object.h(10,26): warning C4227: anachronism used: qualifiers on reference are ignored
-D:\FutureGames\Projects\Programming with C++\arkanoid\arkanoid\src\rectangle_object.h(13,26): warning C4227: anachronism used: qualifiers on reference are ignored
-D:\FutureGames\Projects\Programming with C++\arkanoid\arkanoid\src\rectangle_object.h(16,26): warning C4227: anachronism used: qualifiers on reference are ignored
-D:\FutureGames\Projects\Programming with C++\arkanoid\arkanoid\src\rectangle_object.h(19,26): warning C4227: anachronism used: qualifiers on reference are ignored
-D:\FutureGames\Projects\Programming with C++\arkanoid\arkanoid\src\rectangle_object.h(22,29): warning C4227: anachronism used: qualifiers on reference are ignored
-D:\FutureGames\Projects\Programming with C++\arkanoid\arkanoid\src\rectangle_object.h(25,29): warning C4227: anachronism used: qualifiers on reference are ignored
-D:\FutureGames\Projects\Programming with C++\arkanoid\arkanoid\src\level.cpp(11,61): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-D:\FutureGames\Projects\Programming with C++\arkanoid\arkanoid\src\level.cpp(11,30): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
-D:\FutureGames\Projects\Programming with C++\arkanoid\arkanoid\src\level.cpp(13,37): warning C4244: 'initializing': conversion from 'const float' to 'const int', possible loss of data
-D:\FutureGames\Projects\Programming with C++\arkanoid\arkanoid\src\level.cpp(14,37): warning C4244: 'initializing': conversion from 'const float' to 'const int', possible loss of data
-D:\FutureGames\Projects\Programming with C++\arkanoid\arkanoid\src\level.cpp(134,13): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
-D:\FutureGames\Projects\Programming with C++\arkanoid\arkanoid\src\rectangle_object.h(20): warning C4172: returning address of local variable or temporary
-  arkanoid.vcxproj -> D:\FutureGames\Projects\Programming with C++\arkanoid\x64\Debug\arkanoid.exe
+﻿  application.cpp
+C:\Projects\Game Programming in C++\arkanoid\arkanoid\src\application.cpp(49,89): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Projects\Game Programming in C++\arkanoid\arkanoid\src\application.cpp(49,75): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+  arkanoid.vcxproj -> C:\Projects\Game Programming in C++\arkanoid\x64\Debug\arkanoid.exe

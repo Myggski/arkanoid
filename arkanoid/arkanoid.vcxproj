@@ -19,11 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\application.cpp" />
     <ClCompile Include="src\ball.cpp" />
     <ClCompile Include="src\brick.cpp" />
     <ClCompile Include="src\circle_object.cpp" />
     <ClCompile Include="src\collision.cpp" />
     <ClCompile Include="src\delta_time.cpp" />
+    <ClCompile Include="src\file_handler.cpp" />
     <ClCompile Include="src\game_event_handler.cpp" />
     <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\game_settings.cpp" />
@@ -36,11 +38,13 @@
     <ClCompile Include="src\text.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\application.h" />
     <ClInclude Include="src\ball.h" />
     <ClInclude Include="src\brick.h" />
     <ClInclude Include="src\circle_object.h" />
     <ClInclude Include="src\collision.h" />
     <ClInclude Include="src\delta_time.h" />
+    <ClInclude Include="src\file_handler.h" />
     <ClInclude Include="src\game_event_handler.h" />
     <ClInclude Include="src\game.h" />
     <ClInclude Include="src\game_settings.h" />
