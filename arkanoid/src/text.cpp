@@ -1,6 +1,7 @@
 #include "text.h"
-#include <SDL_ttf.h>
 #include "game_settings.h"
+
+#include <SDL_ttf.h>
 
 Text::Text(const std::string text, int offset_x, int offset_y, int font_size) :
 	RectangleObject(

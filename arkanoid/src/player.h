@@ -2,9 +2,10 @@
 
 #include "rectangle_object.h"
 #include "input.h"
-#include "queue"
 #include "ball.h"
 #include "level.h"
+
+#include "queue"
 
 class Player final : public RectangleObject
 {

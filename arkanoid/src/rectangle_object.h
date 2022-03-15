@@ -1,4 +1,5 @@
 #pragma once
+
 #include "game_object.h"
 
 class RectangleObject : public GameObject

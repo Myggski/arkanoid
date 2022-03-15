@@ -20,6 +20,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\application.cpp" />
+    <ClCompile Include="src\application_input.cpp" />
+    <ClCompile Include="src\application_output.cpp" />
     <ClCompile Include="src\ball.cpp" />
     <ClCompile Include="src\brick.cpp" />
     <ClCompile Include="src\circle_object.cpp" />
@@ -31,6 +33,7 @@
     <ClCompile Include="src\game_settings.cpp" />
     <ClCompile Include="src\input.cpp" />
     <ClCompile Include="src\level.cpp" />
+    <ClCompile Include="src\level_generator.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\player.cpp" />
     <ClCompile Include="src\rectangle_object.cpp" />
@@ -39,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\application.h" />
+    <ClInclude Include="src\application_input.h" />
+    <ClInclude Include="src\application_output.h" />
     <ClInclude Include="src\ball.h" />
     <ClInclude Include="src\brick.h" />
     <ClInclude Include="src\circle_object.h" />
@@ -51,6 +56,7 @@
     <ClInclude Include="src\input.h" />
     <ClInclude Include="src\game_object.h" />
     <ClInclude Include="src\level.h" />
+    <ClInclude Include="src\level_generator.h" />
     <ClInclude Include="src\math_helper.h" />
     <ClInclude Include="src\player.h" />
     <ClInclude Include="src\rectangle_object.h" />

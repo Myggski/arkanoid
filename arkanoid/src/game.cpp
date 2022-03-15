@@ -1,11 +1,10 @@
 #include "game.h"
-
-#include <iostream>
-
 #include "delta_time.h"
 #include "input.h"
 #include "game_object.h"
 #include "level.h"
+
+#include <iostream>
 
 void Game::init(const char* title, int x_pos, int y_pos, int width, int height, bool fullscreen)
 {
@@ -20,6 +19,7 @@ void Game::init(const char* title, int x_pos, int y_pos, int width, int height, 
 
 	if (initialized) {
 		window = SDL_CreateWindow(title, x_pos, y_pos, width, height, flags);
+		SDL_RaiseWindow(window);
 		SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "2");
 		setup();
 	}
