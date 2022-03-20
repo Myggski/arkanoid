@@ -1,10 +1,10 @@
-#include <SDL_pixels.h>
+#pragma once
 
+#include "game_settings.h"
 #include "rectangle_object.h"
 
-static constexpr float BRICK_WIDTH = 50.f;
-static constexpr float BRICK_HEIGHT = 37.5f;
-static constexpr uint8_t BRICK_MAX_LIFE = 3;
+static const float BRICK_WIDTH = 50.f;
+static const float BRICK_HEIGHT = 37.5f;
 static constexpr SDL_Color BRICK_COLOR_1 = { 156, 64, 64, 255 };
 static constexpr SDL_Color BRICK_COLOR_2 = { 64, 156, 64, 255 };
 static constexpr SDL_Color BRICK_COLOR_3 = { 64, 64, 156, 255 };

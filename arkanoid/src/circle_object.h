@@ -1,7 +1,9 @@
 #pragma once
 
-#include <SDL_render.h>
 #include "game_object.h"
+#include "game_settings.h"
+
+#include <SDL_render.h>
 
 class CircleObject : public GameObject {
 public:

@@ -61,6 +61,21 @@
     <ClCompile Include="src\text.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\file_handler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application_input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application_output.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\level_generator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\input.h">
@@ -109,6 +124,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\text.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\file_handler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application_input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application_output.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\level_generator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,7 +1,8 @@
 #pragma once
-#include <string>
 
 #include "rectangle_object.h"
+
+#include <string>
 
 class Text : public RectangleObject
 {

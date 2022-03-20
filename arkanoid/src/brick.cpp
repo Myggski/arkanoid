@@ -1,5 +1,4 @@
 #include "brick.h"
-
 #include "delta_time.h"
 #include "level.h"
 

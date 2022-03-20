@@ -2,17 +2,11 @@
 
 #include "level.h"
 #include "game_object.h"
-#include "game_settings.h"
 #include "ball.h"
 #include "brick.h"
+#include "level_generator.h"
 #include "player.h"
 #include "text.h"
-
-static const int MAX_COLUMNS = (WINDOW_WIDTH / BRICK_WIDTH) - 2;
-static const int MAX_ROWS = 5;
-static constexpr int LEVEL_Y_OFFSET = BRICK_HEIGHT;
-static constexpr int LEVEL_X_OFFSET = BRICK_WIDTH;
-static constexpr float MAX_BALLS_TO_SPAWN = 5.f;
 
 int Level::number_of_balls{ 0 };
 int Level::total_balls_spawned{ 0 };
@@ -29,7 +23,9 @@ void Level::init()
 	game_objects.push_back(player);
 	add_ball();
 
-	const auto bricks = create_level();
+	const auto& bricks = LevelGenerator::create_level();
+	number_of_bricks = bricks.size();
+	total_number_of_bricks = number_of_bricks;
 
 	for (const auto& brick : bricks)
 	{
@@ -58,21 +54,9 @@ const std::vector<GameObject*>& Level::get_objects()
 	return game_objects;
 }
 
-std::vector<GameObject*> Level::create_level()
+int Level::get_number_of_bricks_percentage()
 {
-	std::vector<GameObject*> game_objects = std::vector<GameObject*>();
-
-	for (int y = 0; y < MAX_ROWS; y++)
-	{
-		for (int x = 0; x < MAX_COLUMNS; x++)
-		{
-			game_objects.push_back(new Brick(LEVEL_X_OFFSET + x * BRICK_WIDTH, LEVEL_Y_OFFSET + y * BRICK_HEIGHT, 1 + (x + y) % BRICK_MAX_LIFE));
-			number_of_bricks++;
-		}
-	}
-
-	total_number_of_bricks = number_of_bricks;
-	return game_objects;
+	return ceil(100.f * (static_cast<float>(number_of_bricks) / static_cast<float>(total_number_of_bricks)));
 }
 
 void Level::add_ball()
@@ -128,11 +112,6 @@ bool Level::is_ball_out_of_play(const Ball* ball)
 {
 	return ball->get_y() - ball->get_radius() > player->max_y();
 };
-
-int Level::get_number_of_bricks_percentage()
-{
-	return ceil(100.f * (static_cast<float>(number_of_bricks) / static_cast<float>(total_number_of_bricks)));
-}
 
 void Level::game_over()
 {
