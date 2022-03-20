@@ -11,22 +11,21 @@
 *.gch
 *.pch
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
 # Fortran module files
 *.mod
 *.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
 
 # Executables
 *.exe
 *.out
 *.app
+
+# .vs folder ugh
+.vs/
+
+# build files
+x64/*
+
+!SDL2.dll
+!SDL2_image.dll
+!SDL2_ttf.dll
